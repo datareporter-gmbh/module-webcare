@@ -68,7 +68,7 @@ console.log('current status for cookies('+chosenBefore+'): '+status);
 
 This will output the status of the cookie banner user interaction and all according actions and adaptions can be made to comply with the GDPR according to cookies
 
-#####Demo
+####Demo
 
 Use following Demo-Credentials if you wanna try out the module, see ````Privacy -> Configuration````
 
