@@ -21,20 +21,20 @@ Run the following commands:
 Features
 ------------
 
-###Imprint
+### Imprint
 Use class ````\DataReporter\WebCare\Block\ImprintBlock```` or embedd into CMS-Page/Block as Widget named 'WebCare - Imprint'
 
-###Privacy Notice
+### Privacy Notice
 Use class ````\DataReporter\WebCare\Block\PrivacyNoticeBlock```` or embedd into CMS-Page/Block as Widget named 'WebCare - Privacy Notice'
 
-###Cookie Banner
+### Cookie Banner
 All needed blocks are placed within the layout-xml ```default.xml```. 
 
 If you need to add correct cookie handling if something was denied or allowed, contrubte a js content to the container
 
 ```datareporter.webcare.cookiebanner.allow-handling``` or ```datareporter.webcare.cookiebanner.allow-handling```
 
-####Configuration
+#### Configuration
 
 * URL for the Webcache-Server, normally this is https://webcache.datareporter.eu/c/ if the DataReporter-Suite is not self hosted
 * Add Store configured language to the resource calls to override any other default language settings in DataReporter
@@ -42,7 +42,7 @@ If you need to add correct cookie handling if something was denied or allowed, c
 
 ![alt configuration](docs/images/configuration.png)
 
-####Example
+#### Example
 
 * Widget selection within a CMS-Page/Block:
 
