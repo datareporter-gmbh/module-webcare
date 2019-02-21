@@ -75,6 +75,17 @@ abstract class AbstractWebCareBlock extends Template implements BlockInterface
         return null;
     }
 
+    /**
+     * Type key defining which resource should be included, see \DataReporter\WebCare\Api\Constants for possible types
+     *
+     * @return string
+     */
     abstract public function getType();
+
+    /**
+     * Systemconfiguration path to the yes/no option in the backend configuration for this block to be enabled/disabled
+     *
+     * @return string
+     */
     abstract public function getEnableKey();
 }

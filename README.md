@@ -30,9 +30,9 @@ Use class ````\DataReporter\WebCare\Block\PrivacyNoticeBlock```` or embedd into 
 ### Cookie Banner
 All needed blocks are placed within the layout-xml ```default.xml```. 
 
-If you need to add correct cookie handling if something was denied or allowed, contrubte a js content to the container
+If you need to add correct cookie handling if something was denied or allowed, contribute a js content to the container
 
-```datareporter.webcare.cookiebanner.allow-handling``` or ```datareporter.webcare.cookiebanner.allow-handling```
+```datareporter.webcare.cookiebanner.allow-handling``` or ```datareporter.webcare.cookiebanner.deny-handling```
 
 #### Configuration
 
