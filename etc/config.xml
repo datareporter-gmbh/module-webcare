@@ -3,6 +3,8 @@
     <default>
         <datareporter>
             <webcare>
+                <webcache_url>https://webcache.datareporter.eu/c/</webcache_url>
+                <language_code>1</language_code>
                 <enable_imprint>1</enable_imprint>
                 <enable_privacy_notice>1</enable_privacy_notice>
                 <enable_cookie_banner>1</enable_cookie_banner>

@@ -5,15 +5,23 @@
         <section id="datareporter" >
             <group id="webcare" translate="label" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>WebCare</label>
-                <field id="enable_imprint" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                <field id="webcache_url" translate="label,comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Webcache URL</label>
+                    <comment>URL where to retrieve the WebCare resources from excluding account information and type</comment>
+                </field>
+                <field id="language_code" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Add store language to external resource</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="enable_imprint" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Enable Imprint</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
-                <field id="enable_privacy_notice" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                <field id="enable_privacy_notice" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Enable Privacy Notice</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
-                <field id="enable_cookie_banner" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                <field id="enable_cookie_banner" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Enable Cookie Banner</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>

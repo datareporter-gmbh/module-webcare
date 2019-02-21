@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="head.additional">
+            <block class="DataReporter\WebCare\Block\CookieBannerHeadBlock" name="datareporter.webcare.cookiebanner.head"/>
+        </referenceBlock>
+        <referenceBlock name="after.body.start">
+            <block class="DataReporter\WebCare\Block\CookieBannerBlock" name="datareporter.webcare.cookiebanner">
+                <block class="Magento\Framework\View\Element\Template" name="datareporter.webcare.cookiebanner.init" template="DataReporter_WebCare::cookiebanner/init.phtml">
+                    <container name="datareporter.webcare.cookiebanner.allow-handling"/>
+                    <container name="datareporter.webcare.cookiebanner.deny-handling"/>
+                </block>
+            </block>
+        </referenceBlock>
+    </body>
+</page>

@@ -1,0 +1,14 @@
+<?php
+/** @var \Magento\Framework\View\Element\Template $block */
+?>
+<script>
+    dr_cookiebanner_options.onStatusChange = function(status, chosenBefore) {
+        if (status == 'allow') {
+            <?= $block->getChildHtml('datareporter.webcare.cookiebanner.allow-handling'); ?>
+        } else if (status == 'deny') {
+            <?= $block->getChildHtml('datareporter.webcare.cookiebanner.deny-handling'); ?>
+        }
+    };
+    // show cookiebanner
+    window.cookieconsent.initialise(dr_cookiebanner_options);
+</script>
