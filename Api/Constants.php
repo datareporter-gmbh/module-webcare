@@ -17,7 +17,7 @@ class Constants
     const CONFIG_WEBCARE_ENABLE_PRIVACYNOTICE = 'datareporter/webcare/enable_privacy_notice';
     const CONFIG_WEBCARE_ENABLE_COOKIEBANNER = 'datareporter/webcare/enable_cookie_banner';
 
-    const TYPE_IMPRINT = 'empress';
+    const TYPE_IMPRINT = 'imprint';
     const TYPE_PRIVACYNOTICE = 'privacynotice';
     const TYPE_COOKIEBANNER = 'banner';
 }
