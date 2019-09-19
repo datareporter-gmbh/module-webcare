@@ -9,10 +9,19 @@
 namespace DataReporter\WebCare\Block;
 
 
+use DataReporter\Core\Api\Constants as CoreConstants;
 use DataReporter\WebCare\Api\Constants;
 
 class ImprintBlock extends AbstractWebCareBlock
 {
+
+    public function getTypeKey() {
+        return $this->escapeHtmlAttr(implode('/' , array_filter([
+            $this->_scopeConfig->getValue(CoreConstants::CONFIG_GENERAL_CLIENTID, 'store'),
+            $this->_scopeConfig->getValue(CoreConstants::CONFIG_GENERAL_ORGANISATIONID, 'store'),
+            $this->getType()
+        ])));
+    }
 
     public function getType()
     {
