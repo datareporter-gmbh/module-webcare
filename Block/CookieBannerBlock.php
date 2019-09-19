@@ -23,4 +23,9 @@ class CookieBannerBlock extends AbstractWebCareBlock
     {
         return Constants::CONFIG_WEBCARE_ENABLE_COOKIEBANNER;
     }
+
+    public function hasNoScriptVersion()
+    {
+        return false;
+    }
 }

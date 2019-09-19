@@ -75,6 +75,10 @@ abstract class AbstractWebCareBlock extends Template implements BlockInterface
         return null;
     }
 
+    public function hasNoScriptVersion() {
+        return true;
+    }
+
     /**
      * Type key defining which resource should be included, see \DataReporter\WebCare\Api\Constants for possible types
      *
