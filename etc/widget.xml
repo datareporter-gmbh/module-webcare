@@ -3,9 +3,19 @@
     <widget class="DataReporter\WebCare\Block\ImprintBlock" id="datareporter_webcare_imprint">
         <label>WebCare - Imprint</label>
         <description></description>
+        <parameters>
+            <parameter name="separately_rendered" xsi:type="select" visible="true" source_model="Magento\Config\Model\Config\Source\Yesno">
+                <label translate="true">Render text to separat HTML element</label>
+            </parameter>
+        </parameters>
     </widget>
     <widget class="DataReporter\WebCare\Block\PrivacyNoticeBlock" id="datareporter_webcare_privacynotice">
         <label>WebCare - Privacy Notice</label>
         <description></description>
+        <parameters>
+            <parameter name="separately_rendered" xsi:type="select" visible="true" source_model="Magento\Config\Model\Config\Source\Yesno">
+                <label translate="true">Render text to separat HTML element</label>
+            </parameter>
+        </parameters>
     </widget>
 </widgets>

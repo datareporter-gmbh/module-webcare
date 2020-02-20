@@ -20,4 +20,7 @@ class Constants
     const TYPE_IMPRINT = 'imprint';
     const TYPE_PRIVACYNOTICE = 'privacynotice';
     const TYPE_COOKIEBANNER = 'banner';
+
+    const DIV_ID_IMPRINT = 'dr-imprint-div';
+    const DIV_ID_PRIVACYNOTICE = 'dr-privacynotice-div';
 }

@@ -8,7 +8,6 @@
 
 namespace DataReporter\WebCare\Block;
 
-
 use DataReporter\Core\Api\Constants as CoreConstants;
 use DataReporter\WebCare\Api\Constants;
 use Magento\Framework\View\Element\Template;
@@ -32,21 +31,23 @@ abstract class AbstractWebCareBlock extends Template implements BlockInterface
         \Magento\Framework\Locale\Resolver $localeResolver,
         Template\Context $context,
         array $data = []
-    )
-    {
+    ) {
         parent::__construct($context, $data);
         $this->localeResolver = $localeResolver;
     }
 
-    public function getWebcacheUrl($fileExtension = '.js') {
+    public function getWebcacheUrl($fileExtension = '.js')
+    {
         return $this->_scopeConfig->getValue(Constants::CONFIG_WEBCARE_WEBCACHEURL)
-            .$this->getTypeKey()
-            .$fileExtension
-            .($this->shouldAppendStoreLocale()?('?lang='.$this->getCurrentLocale()):'');
+            . $this->getTypeKey()
+            . $this->getVersionTag($fileExtension)
+            . $fileExtension
+            . ($this->shouldAppendStoreLocale() ? ('?lang=' . $this->getCurrentLocale()) : '');
     }
 
-    public function getTypeKey() {
-        return $this->escapeHtmlAttr(implode('/' , array_filter([
+    public function getTypeKey()
+    {
+        return $this->escapeHtmlAttr(implode('/', array_filter([
             $this->_scopeConfig->getValue(CoreConstants::CONFIG_GENERAL_CLIENTID, 'store'),
             $this->_scopeConfig->getValue(CoreConstants::CONFIG_GENERAL_ORGANISATIONID, 'store'),
             $this->_scopeConfig->getValue(CoreConstants::CONFIG_GENERAL_WEBSITEID, 'store'),
@@ -62,21 +63,48 @@ abstract class AbstractWebCareBlock extends Template implements BlockInterface
         return '';
     }
 
-    protected function shouldAppendStoreLocale() {
+    protected function getVersionTag($fileExtension)
+    {
+        return ($this->renderSeparately()&&$fileExtension==".js") ? '_v2' : '';
+    }
+
+    protected function shouldAppendStoreLocale()
+    {
         return $this->_scopeConfig->getValue(Constants::CONFIG_WEBCARE_ADD_LANGUAGECODE)
             && $this->getCurrentLocale();
     }
 
-    protected function getCurrentLocale() {
-        $locale = $this->localeResolver->getLocale()?:$this->localeResolver->getDefaultLocale();
+    protected function getCurrentLocale()
+    {
+        $locale = $this->localeResolver->getLocale() ?: $this->localeResolver->getDefaultLocale();
         if ($locale) {
             return explode('_', $locale)[0];
         }
         return null;
     }
 
-    public function hasNoScriptVersion() {
+    /**
+     * @return bool
+     */
+    public function hasNoScriptVersion()
+    {
         return true;
+    }
+
+    /**
+     * @return bool
+     */
+    public function renderSeparately()
+    {
+        return $this->getSeparatDivId() && $this->getData('separately_rendered')==true;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getSeparatDivId()
+    {
+        return null;
     }
 
     /**

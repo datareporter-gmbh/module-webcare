@@ -32,4 +32,9 @@ class ImprintBlock extends AbstractWebCareBlock
     {
         return Constants::CONFIG_WEBCARE_ENABLE_IMPRINT;
     }
+
+    public function getSeparatDivId()
+    {
+        return Constants::DIV_ID_IMPRINT;
+    }
 }

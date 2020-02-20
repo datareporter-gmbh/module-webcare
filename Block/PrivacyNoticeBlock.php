@@ -8,12 +8,10 @@
 
 namespace DataReporter\WebCare\Block;
 
-
 use DataReporter\WebCare\Api\Constants;
 
 class PrivacyNoticeBlock extends AbstractWebCareBlock
 {
-
     public function getType()
     {
         return Constants::TYPE_PRIVACYNOTICE;
@@ -22,5 +20,10 @@ class PrivacyNoticeBlock extends AbstractWebCareBlock
     public function getEnableKey()
     {
         return Constants::CONFIG_WEBCARE_ENABLE_PRIVACYNOTICE;
+    }
+
+    public function getSeparatDivId()
+    {
+        return Constants::DIV_ID_PRIVACYNOTICE;
     }
 }
