@@ -39,6 +39,7 @@ If you need to add correct cookie handling if something was denied or allowed, c
 * URL for the Webcache-Server, normally this is https://webcache.datareporter.eu/c/ if the DataReporter-Suite is not self hosted
 * Add Store configured language to the resource calls to override any other default language settings in DataReporter
 * En-/Disabling of the Imprint-, Privacy Notice- and Cookie-Banner-Block to seperatelly controll if they are used
+* En-/Disabling of Cookie Banner Custom Options, the default is no, as the standard method delivered by DataReporter are handling the denying of cookies quite well.
 
 ![alt configuration](docs/images/configuration.png)
 

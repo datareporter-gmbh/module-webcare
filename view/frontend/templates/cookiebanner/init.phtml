@@ -1,7 +1,8 @@
 <?php
-/** @var \Magento\Framework\View\Element\Template $block */
+/** @var \DataReporter\WebCare\Block\CookieBannerOptionsBlock $block */
 ?>
 <script>
+    <?php if ($block->isCustomOptionsEnabled()) { ?>
     dr_cookiebanner_options.onStatusChange = function(status, chosenBefore) {
         if (status == 'allow') {
             <?= $block->getChildHtml('datareporter.webcare.cookiebanner.allow-handling'); ?>
@@ -9,6 +10,7 @@
             <?= $block->getChildHtml('datareporter.webcare.cookiebanner.deny-handling'); ?>
         }
     };
+    <?php } ?>
     // show cookiebanner
     window.cookieconsent.initialise(dr_cookiebanner_options);
 </script>

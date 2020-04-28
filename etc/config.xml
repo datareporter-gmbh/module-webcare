@@ -8,6 +8,7 @@
                 <enable_imprint>1</enable_imprint>
                 <enable_privacy_notice>1</enable_privacy_notice>
                 <enable_cookie_banner>1</enable_cookie_banner>
+                <enable_cookie_banner_options>0</enable_cookie_banner_options>
             </webcare>
         </datareporter>
     </default>

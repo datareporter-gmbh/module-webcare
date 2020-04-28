@@ -7,7 +7,7 @@
         </referenceBlock>
         <referenceBlock name="after.body.start">
             <block class="DataReporter\WebCare\Block\CookieBannerBlock" name="datareporter.webcare.cookiebanner">
-                <block class="Magento\Framework\View\Element\Template" name="datareporter.webcare.cookiebanner.init" template="DataReporter_WebCare::cookiebanner/init.phtml">
+                <block class="DataReporter\WebCare\Block\CookieBannerOptionsBlock" name="datareporter.webcare.cookiebanner.init" template="DataReporter_WebCare::cookiebanner/init.phtml">
                     <container name="datareporter.webcare.cookiebanner.allow-handling"/>
                     <container name="datareporter.webcare.cookiebanner.deny-handling"/>
                 </block>
