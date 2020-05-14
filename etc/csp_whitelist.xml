@@ -3,7 +3,7 @@
     <policies>
         <policy id="style-src">
             <values>
-                <value id="datareporter-webcache" type="host"https://webcache.datareporter.eu</value>
+                <value id="datareporter-webcache" type="host">https://webcache.datareporter.eu</value>
             </values>
         </policy>
     </policies>
