@@ -55,6 +55,6 @@ class CookieBannerStoreSwitcherRedirectBlock extends Template
             }
             $switchConfiguration[$storeCode] = $this->switcherUrlProvider->getTargetStoreRedirectUrl($store);
         }
-        return $this->jsonSerializer->serialize($switchConfiguration);
+        return str_replace('%2C', '=', $this->jsonSerializer->serialize($switchConfiguration));
     }
 }
