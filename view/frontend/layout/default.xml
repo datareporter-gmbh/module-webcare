@@ -10,6 +10,9 @@
                 <block class="DataReporter\WebCare\Block\CookieBannerOptionsBlock" name="datareporter.webcare.cookiebanner.init" template="DataReporter_WebCare::cookiebanner/init.phtml">
                     <container name="datareporter.webcare.cookiebanner.allow-handling"/>
                     <container name="datareporter.webcare.cookiebanner.deny-handling"/>
+                    <container name="datareporter.webcare.cookiebanner.redirect-after-consent">
+                        <block class="DataReporter\WebCare\Block\CookieBannerStoreSwitcherRedirectBlock" name="datareporter.webcare.cookiebanner.storeswitch-redirect"/>
+                    </container>
                 </block>
             </block>
         </referenceBlock>

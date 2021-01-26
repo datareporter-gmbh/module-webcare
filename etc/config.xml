@@ -9,6 +9,7 @@
                 <enable_privacy_notice>1</enable_privacy_notice>
                 <enable_cookie_banner>1</enable_cookie_banner>
                 <enable_cookie_banner_options>0</enable_cookie_banner_options>
+                <enable_cookie_banner_custom_redirect>0</enable_cookie_banner_custom_redirect>
             </webcare>
         </datareporter>
     </default>

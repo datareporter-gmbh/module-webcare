@@ -8,7 +8,6 @@
 
 namespace DataReporter\WebCare\Block;
 
-
 use DataReporter\WebCare\Api\Constants;
 use Magento\Framework\View\Element\Template;
 
@@ -23,5 +22,9 @@ class CookieBannerOptionsBlock extends Template
      */
     public function isCustomOptionsEnabled() {
         return $this->_scopeConfig->getValue(Constants::CONFIG_WEBCARE_ENABLE_COOKIEBANNER_OPTIONS, 'store') == true;
+    }
+
+    public function isCustomRedirectAfterConsentEnabled() {
+        return $this->_scopeConfig->getValue(Constants::CONFIG_WEBCARE_ENABLE_COOKIEBANNER_CUSTOMREDIRECT, 'store') == true;
     }
 }

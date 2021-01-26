@@ -1,0 +1,22 @@
+<?php
+    /** @var \DataReporter\WebCare\Block\CookieBannerStoreSwitcherRedirectBlock $block */
+?>
+var urlConfig = <?= $block->getSwitchUrlConfiguration() ?>;
+var redirectUrl = null;
+var consent = option.consent.split('=');
+if (urlConfig.hasOwnProperty(option.key)) {
+    var redirectMatches = urlConfig[option.key].match(/^(.*)\/uenc\/(.*)\/$/);
+    if (redirectMatches != null && redirectMatches.length==3) {
+        var redirectUrlParam = new URL(atob(redirectMatches[2]));
+        redirectUrlParam.searchParams.append(consent[0],consent[1]);
+        redirectUrl = redirectMatches[1] + '/uenc/' + btoa(redirectUrlParam.href) + '/';
+    }
+}
+if (redirectUrl == null) {
+    /* if no special url is given or could be found use the one configured in datareporter */
+    var adaptedUrl = new URL(option.redirect);
+    adaptedUrl.searchParams.append(consent[0],consent[1]);
+    redirectUrl = adaptedUrl.href;
+}
+
+window.location.replace(redirectUrl);

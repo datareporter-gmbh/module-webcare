@@ -11,6 +11,11 @@
         }
     };
     <?php } ?>
+    <?php if ($block->isCustomRedirectAfterConsentEnabled()) { ?>
+    dr_cookiebanner_options.onRedirectAfterConsent = function(option) {
+        <?= $block->getChildHtml('datareporter.webcare.cookiebanner.redirect-after-consent'); ?>
+    };
+    <?php } ?>
     // show cookiebanner
     window.cookieconsent.initialise(dr_cookiebanner_options);
 </script>

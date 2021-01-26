@@ -69,6 +69,19 @@ console.log('current status for cookies('+chosenBefore+'): '+status);
 
 This will output the status of the cookie banner user interaction and all according actions and adaptions can be made to comply with the GDPR according to cookies
 
+Adding a custom redirect handling:
+
+In the extended cookie banner with the corresponding selection of different pages (e.g. for languages) a callback function can be registered. This is used in Magento to correctly redirect the user to the according storeview with magento internal redirects (to correctly set and transfer data from one storeview to another). This feature can be activated in the configuration: ```Stores -> configuration -> DataReporter -> Settings -> WebCare -> Enable Cookie Banner custom redirect after consent```
+
+Custom behavior can be added by disabling the default block and adding a custom one with another logic:
+
+```
+<referenceContainer name="datareporter.webcare.cookiebanner.redirect-after-consent">
+    <block name="test-cookiebanner-redirects" class="Magento\Framework\View\Element\Template" template="cookiebanner/test.phtml"/>
+</referenceContainer>
+<referenceBlock name="datareporter.webcare.cookiebanner.storeswitch-redirect" remove="true"/>
+``` 
+
 #### Demo
 
 Use following Demo-Credentials if you wanna try out the module, see ````Privacy -> Configuration````
