@@ -38,7 +38,7 @@ abstract class AbstractWebCareBlock extends Template implements BlockInterface
 
     public function getWebcacheUrl($fileExtension = '.js')
     {
-        return $this->_scopeConfig->getValue(Constants::CONFIG_WEBCARE_WEBCACHEURL)
+        return $this->_scopeConfig->getValue(Constants::CONFIG_WEBCARE_WEBCACHEURL, 'store')
             . $this->getTypeKey()
             . $this->getVersionTag($fileExtension)
             . $fileExtension
@@ -57,7 +57,7 @@ abstract class AbstractWebCareBlock extends Template implements BlockInterface
 
     public function toHtml()
     {
-        if ($this->_scopeConfig->getValue($this->getEnableKey())) {
+        if ($this->_scopeConfig->getValue($this->getEnableKey(), 'store')) {
             return parent::toHtml();
         }
         return '';
@@ -70,7 +70,7 @@ abstract class AbstractWebCareBlock extends Template implements BlockInterface
 
     protected function shouldAppendStoreLocale()
     {
-        return $this->_scopeConfig->getValue(Constants::CONFIG_WEBCARE_ADD_LANGUAGECODE)
+        return $this->_scopeConfig->getValue(Constants::CONFIG_WEBCARE_ADD_LANGUAGECODE, 'store')
             && $this->getCurrentLocale();
     }
 
