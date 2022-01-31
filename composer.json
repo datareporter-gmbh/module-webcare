@@ -1,7 +1,7 @@
 {
   "name": "datareporter/module-webcare",
   "type": "magento2-module",
-  "version": "1.3.4",
+  "version": "1.3.5",
   "description": "Magento2 module to embed DataReporter WebCare elements (imprint, privacy notice, cookie banner)",
   "license": [ "MIT" ],
   "keywords":[ "composer-installer", "magento2", "data privacy"],
