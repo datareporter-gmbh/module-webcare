@@ -7,7 +7,7 @@ var consent = option.consent.split('=');
 if (urlConfig.hasOwnProperty(option.key)) {
     var redirectMatches = urlConfig[option.key].match(/^(.*)\/uenc\/(.*)\/$/);
     if (redirectMatches != null && redirectMatches.length==3) {
-        var redirectUrlParam = new URL(atob(redirectMatches[2]));
+        var redirectUrlParam = new URL(atob(redirectMatches[2].replace(/~+$/,"=")));
         redirectUrlParam.searchParams.append(consent[0],consent[1]);
         redirectUrl = redirectMatches[1] + '/uenc/' + btoa(redirectUrlParam.href) + '/';
     }
