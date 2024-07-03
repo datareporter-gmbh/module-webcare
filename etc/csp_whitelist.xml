@@ -23,6 +23,12 @@
                 <value id="datareporter-webcache-eu" type="host">webcache-eu.datareporter.eu</value>
             </values>
         </policy>
+        <policy id="font-src">
+            <values>
+                <value id="datareporter-cache-font" type="host">webcachex-eu.datareporter.eu</value>
+            </values>
+        </policy>
+
         <policy id="connect-src">
             <values>
                 <value id="datareporter" type="host">*.datareporter.eu</value>
