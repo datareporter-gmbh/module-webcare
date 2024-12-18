@@ -1,21 +1,27 @@
 <?php
 /** @var \DataReporter\WebCare\Block\CookieBannerOptionsBlock $block */
-?>
-<script>
-    <?php if ($block->isCustomOptionsEnabled()) { ?>
-    dr_cookiebanner_options.onStatusChange = function(status, chosenBefore) {
+/** @var \Magento\Framework\View\Helper\SecureHtmlRenderer $secureRenderer */
+
+$scriptString = '';
+if ($block->isCustomOptionsEnabled()) {
+    $scriptString .= "    dr_cookiebanner_options.onStatusChange = function(status, chosenBefore) {
         if (status == 'allow') {
-            <?= $block->getChildHtml('datareporter.webcare.cookiebanner.allow-handling'); ?>
+            {$block->getChildHtml('datareporter.webcare.cookiebanner.allow-handling')}
         } else if (status == 'deny') {
-            <?= $block->getChildHtml('datareporter.webcare.cookiebanner.deny-handling'); ?>
+            {$block->getChildHtml('datareporter.webcare.cookiebanner.deny-handling')}
         }
     };
-    <?php } ?>
-    <?php if ($block->isCustomRedirectAfterConsentEnabled()) { ?>
-    dr_cookiebanner_options.onRedirectAfterConsent = function(option) {
-        <?= $block->getChildHtml('datareporter.webcare.cookiebanner.redirect-after-consent'); ?>
+    ";
+}
+
+if ($block->isCustomRedirectAfterConsentEnabled()) {
+    $scriptString .= "    dr_cookiebanner_options.onRedirectAfterConsent = function(option) {
+        {$block->getChildHtml('datareporter.webcare.cookiebanner.redirect-after-consent')}
     };
-    <?php } ?>
-    // show cookiebanner
-    window.cookieconsent.initialise(dr_cookiebanner_options);
-</script>
+    ";
+}
+$scriptString .= "    // show cookiebanner
+    window.cookieconsent.initialise(dr_cookiebanner_options);";
+
+/* @noEscape */
+echo $secureRenderer->renderTag('script', [], $scriptString);
