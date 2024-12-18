@@ -24,4 +24,4 @@ $scriptString .= "    // show cookiebanner
     window.cookieconsent.initialise(dr_cookiebanner_options);";
 
 /* @noEscape */
-echo $secureRenderer->renderTag('script', [], $scriptString);
+echo $secureRenderer->renderTag('script', [], $scriptString, false);
