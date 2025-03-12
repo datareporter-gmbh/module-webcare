@@ -3,12 +3,12 @@
     <policies>
         <policy id="style-src">
             <values>
-                <value id="datareporter-webcache" type="host">https://webcache.datareporter.eu</value>
+                <value id="*.datareporter.eu" type="host">*.datareporter.eu</value>
             </values>
         </policy>
         <policy id="script-src">
             <values>
-                <value id="datareporter" type="host">*.datareporter.eu</value>
+                <value id="*.datareporter.eu" type="host">*.datareporter.eu</value>
             </values>
         </policy>
         <policy id="style-src-elem">
