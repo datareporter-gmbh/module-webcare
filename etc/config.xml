@@ -10,6 +10,10 @@
                 <enable_cookie_banner>1</enable_cookie_banner>
                 <enable_cookie_banner_options>0</enable_cookie_banner_options>
                 <enable_cookie_banner_custom_redirect>0</enable_cookie_banner_custom_redirect>
+                <loader_mode>0</loader_mode>
+                <loader_url>https://webcachex-eu.datareporter.eu/loader/v5/cmp-load.js</loader_url>
+                <loader_integration_key></loader_integration_key>
+                <loader_sri_hash>sha384-Yh6XuJwOlmI2r/DqXWGw4mGoFjpAsmouYCyW6xJV4te0MF+9PzMBsOXsDwvqSYUu</loader_sri_hash>
             </webcare>
         </datareporter>
     </default>

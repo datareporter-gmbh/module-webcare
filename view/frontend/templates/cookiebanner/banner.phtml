@@ -1,0 +1,20 @@
+<?php
+/** @var \DataReporter\WebCare\Block\CookieBannerBlock $block */
+?>
+<?php if ($block->isLoaderModeEnabled()): ?>
+    <?php if ($block->getLoaderScriptUrl()): ?>
+        <script src="<?= $block->getLoaderScriptUrl() ?>"
+                defer
+                <?php if ($block->isSriEnabled()): ?>
+                    integrity="<?= $block->escapeHtmlAttr($block->getLoaderSriHash()) ?>"
+                    crossorigin="anonymous"
+                <?php endif; ?>
+        ></script>
+    <?php endif; ?>
+<?php else: ?>
+    <script src="<?= $block->getWebcacheUrl() ?>" charset="utf-8"></script>
+<?php endif; ?>
+<?php if ($block->renderSeparately()): ?>
+    <div id="<?= $block->getSeparatDivId() ?>"></div>
+<?php endif; ?>
+<?= $block->getChildHtml(); ?>

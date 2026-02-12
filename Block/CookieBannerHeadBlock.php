@@ -14,7 +14,7 @@ use DataReporter\WebCare\Api\Constants;
 class CookieBannerHeadBlock extends AbstractWebCareBlock
 {
     protected $_template = 'DataReporter_WebCare::cookiebanner/head.phtml';
-    
+
     public function getType()
     {
         return Constants::TYPE_COOKIEBANNER;
@@ -30,4 +30,22 @@ class CookieBannerHeadBlock extends AbstractWebCareBlock
         return false;
     }
 
+    /**
+     * Check if Loader Mode (CSP/SRI compliant) is enabled
+     * In Loader Mode, no separate CSS is needed as the Loader handles everything
+     *
+     * @return bool
+     */
+    public function isLoaderModeEnabled(): bool
+    {
+        return (bool) $this->_scopeConfig->getValue(Constants::CONFIG_WEBCARE_LOADER_MODE, 'store');
+    }
+
+    public function toHtml()
+    {
+        if ($this->isLoaderModeEnabled()) {
+            return '';
+        }
+        return parent::toHtml();
+    }
 }

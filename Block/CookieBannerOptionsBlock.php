@@ -20,11 +20,31 @@ class CookieBannerOptionsBlock extends Template
     /**
      * @return bool
      */
-    public function isCustomOptionsEnabled() {
+    public function isCustomOptionsEnabled()
+    {
         return $this->_scopeConfig->getValue(Constants::CONFIG_WEBCARE_ENABLE_COOKIEBANNER_OPTIONS, 'store') == true;
     }
 
-    public function isCustomRedirectAfterConsentEnabled() {
+    public function isCustomRedirectAfterConsentEnabled()
+    {
         return $this->_scopeConfig->getValue(Constants::CONFIG_WEBCARE_ENABLE_COOKIEBANNER_CUSTOMREDIRECT, 'store') == true;
+    }
+
+    /**
+     * Check if Loader Mode (CSP/SRI compliant) is enabled
+     *
+     * @return bool
+     */
+    public function isLoaderModeEnabled(): bool
+    {
+        return (bool) $this->_scopeConfig->getValue(Constants::CONFIG_WEBCARE_LOADER_MODE, 'store');
+    }
+
+    public function toHtml()
+    {
+        if ($this->isLoaderModeEnabled()) {
+            return '';
+        }
+        return parent::toHtml();
     }
 }

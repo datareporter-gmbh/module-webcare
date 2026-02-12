@@ -39,6 +39,38 @@
                         <field id="enable_cookie_banner">1</field>
                     </depends>
                 </field>
+                <field id="loader_mode" translate="label,comment" type="select" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Loader Mode (CSP/SRI compliant)</label>
+                    <comment><![CDATA[Enable Loader integration for CSP/SRI compliance. When enabled, the banner is loaded via the Loader script instead of direct banner files.]]></comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="enable_cookie_banner">1</field>
+                    </depends>
+                </field>
+                <field id="loader_url" translate="label,comment" type="text" sortOrder="81" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Loader URL</label>
+                    <comment><![CDATA[Base URL for the Loader script (e.g., https://webcachex-eu.datareporter.eu/loader/v5/cmp-load.js)]]></comment>
+                    <depends>
+                        <field id="enable_cookie_banner">1</field>
+                        <field id="loader_mode">1</field>
+                    </depends>
+                </field>
+                <field id="loader_integration_key" translate="label,comment" type="text" sortOrder="82" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Loader Integration Key (optional)</label>
+                    <comment><![CDATA[Optional: WebCare Integration Key for the Loader. If empty, it will be auto-generated from Client ID, Organisation ID and Website ID.]]></comment>
+                    <depends>
+                        <field id="enable_cookie_banner">1</field>
+                        <field id="loader_mode">1</field>
+                    </depends>
+                </field>
+                <field id="loader_sri_hash" translate="label,comment" type="text" sortOrder="83" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>SRI Hash</label>
+                    <comment><![CDATA[Subresource Integrity hash for the Loader script (e.g., sha384-Yh6XuJwOlmI2r/DqXWGw4mGoFjpAsmouYCyW6xJV4te0MF+9PzMBsOXsDwvqSYUu). Leave empty to disable SRI.]]></comment>
+                    <depends>
+                        <field id="enable_cookie_banner">1</field>
+                        <field id="loader_mode">1</field>
+                    </depends>
+                </field>
             </group>
         </section>
     </system>

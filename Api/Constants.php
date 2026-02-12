@@ -18,6 +18,10 @@ class Constants
     const CONFIG_WEBCARE_ENABLE_COOKIEBANNER = 'datareporter/webcare/enable_cookie_banner';
     const CONFIG_WEBCARE_ENABLE_COOKIEBANNER_OPTIONS = 'datareporter/webcare/enable_cookie_banner_options';
     const CONFIG_WEBCARE_ENABLE_COOKIEBANNER_CUSTOMREDIRECT = 'datareporter/webcare/enable_cookie_banner_custom_redirect';
+    const CONFIG_WEBCARE_LOADER_MODE = 'datareporter/webcare/loader_mode';
+    const CONFIG_WEBCARE_LOADER_URL = 'datareporter/webcare/loader_url';
+    const CONFIG_WEBCARE_LOADER_SRI_HASH = 'datareporter/webcare/loader_sri_hash';
+    const CONFIG_WEBCARE_LOADER_INTEGRATION_KEY = 'datareporter/webcare/loader_integration_key';
 
     const TYPE_IMPRINT = 'imprint';
     const TYPE_PRIVACYNOTICE = 'privacynotice';
