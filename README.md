@@ -43,6 +43,36 @@ If you need to add correct cookie handling if something was denied or allowed, c
 
 ![alt configuration](docs/images/configuration.png)
 
+#### Loader Mode (CSP/SRI compliant)
+
+The Loader Mode enables full compliance with strict [Content Security Policy (CSP)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) and [Subresource Integrity (SRI)](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity) requirements. Instead of loading the cookie banner script directly from the WebCache server, the Loader Mode uses a dedicated Loader script that handles all resource loading in a CSP-compatible way.
+
+When Loader Mode is active:
+- The cookie banner is loaded via the Loader script instead of direct banner files
+- The separate CSS head block and custom options block are automatically suppressed
+- Imprint and Privacy Notice render only the target `<div>` container (the Loader injects content)
+- An optional SRI hash can be configured to enforce script integrity verification
+
+Configuration options under `Stores -> Configuration -> DataReporter -> Settings -> WebCare`:
+
+| Option | Description | Default |
+|--------|-------------|---------|
+| **Loader Mode (CSP/SRI compliant)** | Enable/disable Loader Mode | Disabled |
+| **Loader URL** | Base URL for the Loader script | `https://webcachex-eu.datareporter.eu/loader/v5/cmp-load.js` |
+| **Loader Integration Key** *(optional)* | WebCare Integration Key for the Loader. If empty, auto-generated from Client ID, Organisation ID and Website ID | — |
+| **SRI Hash** | Subresource Integrity hash for the Loader script. Leave empty to disable SRI | Pre-configured default hash |
+
+The Integration Key is automatically derived from your existing DataReporter configuration (`{client_id}.{organisation_id}.{website_id}`) if not explicitly set.
+
+Example of the rendered script tag with SRI enabled:
+
+```html
+<script src="https://webcachex-eu.datareporter.eu/loader/v5/cmp-load.js?url=<integration-key>"
+        defer
+        integrity="sha384-..."
+        crossorigin="anonymous"></script>
+```
+
 #### Example
 
 * Widget selection within a CMS-Page/Block:
